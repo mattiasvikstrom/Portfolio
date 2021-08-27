@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const button = document.querySelector('.beer__button')
-    const container = document.querySelector('.container')
     const randomBeer = document.querySelector('.random__beer')
     const descriptionDisplay = document.querySelector('.descriptionDisplay')
     const beerImage = document.querySelector('.beerImage')

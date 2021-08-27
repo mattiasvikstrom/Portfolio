@@ -1,10 +1,10 @@
 :root {
     --clr-primary: rgb(39, 39, 39);
     --clr-primary-dark: #343333;
+    --clr-primary-light: white;
     --clr-secondary: rgb(112, 112, 112);
     --clr-secondary-light: white;
     --clr-accent: #9a9a9a;
-    --clr-accent-dark: hsl(2, 66%, 35%);
 }
 body {
     /* Tar bort förinställd rymd i body, då jag hellre vill ändra det själv */
@@ -17,8 +17,9 @@ body {
 body{
     height: 100%;
     min-height: 100%;
-    /* max-width: 1080px;  */
-    
+}
+a{
+    color: var(--clr-primary-light);
 }
 /*********************************************************/
 /*                        Header                         */
@@ -55,13 +56,17 @@ header .page__nav {
 .page__nav-title, .page__nav-item a{
   background-color: transparent;
   text-decoration: none;
-  color: white;
+  color: var(--clr-primary-light);
 }
 .page__nav-title, .page__nav-item a:visited, .page__nav-title a:visited{
     background-color: transparent;
     text-decoration: none;
-    color: white;
-  }
+    color: var(--clr-primary-light);
+}
+.page__nav-title a:hover{
+    color:rgb(148, 148, 148);
+    text-decoration: none;
+}
 .page__nav-logo {
     display: inline-block;
     font-size: 1rem;
@@ -69,7 +74,7 @@ header .page__nav {
     white-space: nowrap;
 }
 .page__nav-item {
-    order: 4; /* default is 0 */
+    order: 4;
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
@@ -102,7 +107,7 @@ header .page__nav {
     list-style-type: none;
 }
 .page__nav li:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--clr-primary-light);
 }
 .header__main-headline{
     text-align: center;
@@ -116,7 +121,6 @@ header ul li {
 }
 header ul {
     float: right;
-    /* margin-top: 20px; */
     margin-right: 2em;
 }
 .header-main {
@@ -180,10 +184,12 @@ main {
     align-items: center;
   }
 .section-row {
-    /* display: flex; */
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+  }
+  .section-column:last-child {
+      padding-bottom: 50px;
   }
   
 .section-column {
@@ -198,7 +204,6 @@ main {
     color: #9a9a9a;
     margin-bottom: 15px;
     flex: 50%;
-    /* flex-basis: 100%; */
     align-items: center;
   }
   
@@ -223,9 +228,6 @@ main {
     max-width: 100%;
     flex: 50%;
     margin: 0;
-    }
-    .section-column{
-    /* margin: 0.1rem; */
     }
     .left-column {
     text-align: right;
@@ -253,12 +255,6 @@ main {
     text-align:left;
     }
 }
-@media only screen and (min-width: 768px) {
-    
-}
-@media only screen and (min-width: 768px) {
-    
-}
 @media only screen and (min-width: 1440px) {
     .left-column, .right-column{
     max-width: 100%;
@@ -266,7 +262,6 @@ main {
     margin: 0;
     }
     .section-column{
-    /* margin: 0.1rem; */
     flex: 50%;
     max-width: 1080px;
     }
@@ -296,7 +291,6 @@ main {
     .left-column p, .right-column p{
     max-width: 100%;
     text-align:left;
-    /* padding: 25% 25% 10%; */
     }
 }
 /*********************************************************/
@@ -305,7 +299,6 @@ main {
 footer {
     height: 120px;
     position: fixed;
-    /* padding: 10px 10px 10px 10px; */
     bottom: 0;
     width: 100%;
     text-align: center;
@@ -313,21 +306,7 @@ footer {
 .footer__icon img {
     height:50px;
     width: auto;
-    /* overflow: hidden; */
 }
-/* .page-logo {
-    height: 30px;
-    width: 30px;
-    left: 42%;
-    position: fixed;
-    display: block;
-    box-sizing: border-box;
-}
-@media screen and (max-width: 827px) {
-    .page-logo {
-    position:initial;
-    }
-} */
 
 /*********************************************************/
 /*                        BeerCSS                        */
@@ -340,8 +319,8 @@ footer {
 .beerImage img {
     align-items: center;
     margin:0;
-    height: 500px;
-    padding-top: 12em;
+    height: 400px;
+    padding-top: 1em;
 }
 .random__beer {
     text-align: center;
@@ -350,13 +329,13 @@ footer {
 .beer__button {
     text-align: center;
     margin-bottom: 20px;
-}
-.beer__button button {
+    margin-top: 70px;
 }
 .descriptionDisplay {
     text-align: left;
     margin-left: 20%;
     margin-right: 20%;
+    padding-bottom: 50px;
 }
 .container {
     padding-top: 5em;
